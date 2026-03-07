@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AiiTONE.NET | Motion Logo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #050505;
+            --brand-color: #00f2ff; /* Cyber Cyan */
+            --accent-color: #7000ff; /* Electric Purple */
+        }
+
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: var(--bg-color);
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+        }
+
+        .logo-container {
+            position: relative;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        /* The Animated Glow Ring */
+        .glow-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120%;
+            height: 120%;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--brand-color) 0%, transparent 70%);
+            opacity: 0.15;
+            animation: breathe 4s ease-in-out infinite;
+            filter: blur(40px);
+            z-index: -1;
+        }
+
+        .text-logo {
+            font-size: 5rem;
+            letter-spacing: -2px;
+            color: #fff;
+            position: relative;
+            user-select: none;
+        }
+
+        /* Gradient Sweep Animation */
+        .text-logo span {
+            background: linear-gradient(90deg, #fff, var(--brand-color), var(--accent-color), #fff);
+            background-size: 300% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 6s linear infinite;
+        }
+
+        .suffix {
+            font-size: 1.5rem;
+            vertical-align: middle;
+            opacity: 0.8;
+            margin-left: 4px;
+        }
+
+        @keyframes breathe {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.1; }
+            50% { transform: translate(-50%, -50%) scale(1.3); opacity: 0.3; }
+        }
+
+        @keyframes shimmer {
+            to { background-position: 300% center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo-container">
+        <div class="glow-ring"></div>
+        <h1 class="text-logo">
+            <span>AiiTONE</span><span class="suffix">.NET</span>
+        </h1>
+    </div>
+
+</body>
+</html>
